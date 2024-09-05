@@ -1,16 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
+import { Link } from "expo-router";
 import {
   StyleSheet,
   View,
   ActivityIndicator,
   FlatList,
   Text,
+  Pressable,
+  useWindowDimensions,
 } from "react-native";
 import { getLatestGames } from "../lib/metacritic";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedCharacterCard } from "./CharacterCard";
 import { Logo } from "./Logo";
+import { CircleInfoIcon } from "./Icons";
+import { Screen } from "./Screen";
 
 export function Main() {
   const [games, setGames] = useState([]);
@@ -54,11 +59,10 @@ export function Main() {
     created: "2017-11-04T18:48:46.250Z",
   };
 
+  const { height: windowHeight } = useWindowDimensions();
+
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <View style={{ marginBottom: 20 }}>
-        <Logo />
-      </View>
+    <Screen>
       {characters.length === 0 ? (
         <ActivityIndicator />
       ) : (
@@ -67,7 +71,11 @@ export function Main() {
           renderItem={({ item, index }) => (
             <AnimatedCharacterCard character={item} index={index} />
           )}
+          style={{ height: windowHeight }}
           keyExtractor={(item) => item.id}
+          onScroll={(event) => {
+            console.log("scroll");
+          }}
         />
       )}
       {/* {games.map((game) => (
@@ -82,8 +90,6 @@ export function Main() {
           />
         </View>
       ))} */}
-    </View>
+    </Screen>
   );
 }
-
-const styles = StyleSheet.create({});
