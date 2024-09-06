@@ -78,18 +78,6 @@ export function Main() {
           }}
         />
       )}
-      {/* {games.map((game) => (
-        <View key={game.slug} style={styles.card}>
-          <Image
-            source={{ uri: game.image }}
-            style={{
-              width: 107,
-              height: 147,
-              borderRadius: 10,
-            }}
-          />
-        </View>
-      ))} */}
     </Screen>
   );
 }
