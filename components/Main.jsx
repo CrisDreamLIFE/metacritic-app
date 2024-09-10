@@ -10,7 +10,7 @@ import {
 import { getLatestGames } from "../lib/metacritic";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedCharacterCard } from "./CharacterCard";
-import { Logo } from "./Logo";
+// import { Logo } from "./Logo";
 
 export function Main() {
   const [games, setGames] = useState([]);
@@ -57,7 +57,8 @@ export function Main() {
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <View style={{ marginBottom: 20 }}>
-        <Logo />
+        <Text>LOGO</Text>
+        {/* <Logo /> */}
       </View>
       {characters.length === 0 ? (
         <ActivityIndicator />
