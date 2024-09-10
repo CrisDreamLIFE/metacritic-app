@@ -1,0 +1,18 @@
+crear app: npx create-expo-app@latest curso-react-native-metacritic-app --template blank
+
+correr con menu: npm start
+
+para ver en web: npx expo install react-native-web react-dom @expo/metro-runtime
+
+safe arriba y abajo: npx expo install react-native-safe-area-context
+
+para svg: npx exp install react-native-svg; visitar pagina svgr (https://react-svgr.com/playground/)
+
+linter: npx expo lint   -> VSCODE consola: npx expo install -- --save-dev prettier eslint-config-prettier eslint-plugin-prettier; luego configurar en eslintrc.js; finalmente VSCODE extensions: ESLint, Prettier - Code formatter
+
+taildwind: npm install nativewind; npm install --save-dev --save-exact tailwindcss@3.3.2; npx tailwindcss init
+
+para las rutas: npm install expo-router, npm install react-native-screens, npm install expo-linking,  react-native-safe-area-context***, npm install expo-constants ***, npm install status-bar ***
+		cambiar el "main" (packge.json) -> "expo-router-entry"    //para web -> npx expo install react-native-web react-dom
+
+para iconos: npm install @expo/vector-icons
